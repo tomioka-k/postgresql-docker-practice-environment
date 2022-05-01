@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    container_name: postgres
+    build: .
+    ports:
+      - 5433:5432
+    volumes:
+      - ./db:/var/lib/postgresql/data
+      - ./sample-db:/var/lib/postgresql/data/sample-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
